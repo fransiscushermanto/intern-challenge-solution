@@ -1,0 +1,227 @@
+html,
+body {
+  margin: 0;
+}
+
+:root {
+  --max-width: 58.4375rem;
+  --padding: 0 1.875rem;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+nav > .nav-container {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100%;
+
+  padding: var(--padding);
+
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  margin-top: 4.375rem;
+
+  width: 100%;
+  padding: var(--padding);
+  padding-top: 2.5rem;
+}
+
+.section-profile,
+.section-images {
+  width: 100%;
+  height: auto;
+}
+
+/* Section Profile */
+
+.section-profile {
+  margin-bottom: 2.5rem;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 426px) {
+  .section-profile {
+    flex-direction: column;
+  }
+
+  .section-profile > .profile-img {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.profile-img {
+  flex: 1 1 9.375rem;
+
+  width: 9.375rem;
+  height: 9.375rem;
+
+  background-color: #dbdbdb;
+
+  clip-path: circle();
+}
+
+.profile-info {
+  flex: 2 1 30px;
+}
+
+.profile-info > *:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.profile-info > .username {
+  font-weight: 300;
+  text-transform: lowercase;
+  line-height: 32px;
+}
+
+.profile-info > .profile-engagement {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.profile-info > .profile-engagement > li:not(:last-child) {
+  margin-right: 2.5rem;
+}
+
+.profile-info > .profile-engagement > li > .count {
+  font-weight: 700;
+}
+
+.profile-info > .profile-summary {
+  line-height: 24px;
+}
+
+.profile-info > .profile-summary > .name {
+  font-weight: 700;
+}
+
+.profile-info > .profile-summary > .website > a {
+  color: #00376b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Section Images */
+
+#image-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.3125rem, max-content));
+  row-gap: 1.75rem;
+  column-gap: 1.75rem;
+  justify-content: center;
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  width: 18.3125rem;
+  height: 18.3125rem;
+}
+
+.image-wrapper > img {
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper > .image-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.image-info::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.2s ease-in;
+}
+
+.image-info.visible {
+  opacity: 1;
+}
+
+.image-info.visible::after {
+  opacity: 0.3;
+}
+
+.image-info > .like-info,
+.image-info > .comment-info {
+  z-index: 1;
+
+  display: flex;
+  color: white;
+  align-items: center;
+  font-weight: bold;
+}
+
+.image-info > .like-info > *:first-of-type,
+.image-info > .comment-info > *:first-of-type {
+  margin-right: 0.625rem;
+}
+
+.like-info > .like-icon-wrapper,
+.comment-info > .comment-icon-wrapper {
+  cursor: pointer;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
