@@ -1,6 +1,14 @@
 html,
 body {
+  width: 100%;
   margin: 0;
+  overflow-x: hidden;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
 }
 
 :root {
@@ -55,6 +63,8 @@ nav > .nav-container {
   align-items: center;
 }
 
+/* @media (max-width: ) */
+
 .logo {
   text-decoration: none;
   color: black;
@@ -84,7 +94,7 @@ main {
   flex-wrap: wrap;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 565px) {
   .section-profile {
     flex-direction: column;
   }
