@@ -1,5 +1,6 @@
 const BASE_URL = "https://pixabay.com/api/";
 const API_KEY = "27288807-7c18b43e45aba5d7e6b6f5102";
+const BASE_PATH = "./assets/png";
 
 async function getPhotos() {
   /* docs: https://pixabay.com/api/docs/#api_javascript_example */
@@ -31,7 +32,7 @@ window.addEventListener("load", async function () {
     likeIconWrapper.classList.add("like-icon-wrapper");
 
     const likeIcon = this.document.createElement("img");
-    likeIcon.src = "./assets/png/like.png";
+    likeIcon.src = `${BASE_PATH}/like.png`;
     likeIconWrapper.appendChild(likeIcon);
 
     likeInfo.appendChild(likeIconWrapper);
@@ -48,7 +49,7 @@ window.addEventListener("load", async function () {
     commentIconWrapper.classList.add("comment-icon-wrapper");
 
     const commentIcon = this.document.createElement("img");
-    commentIcon.src = "./assets/png/comment.png";
+    commentIcon.src = `${BASE_PATH}/comment.png`;
     commentIconWrapper.appendChild(commentIcon);
 
     commentInfo.appendChild(commentIconWrapper);
